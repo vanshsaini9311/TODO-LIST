@@ -4,37 +4,132 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>TODO List</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: black;
+            color: white;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .heading {
+            display: flex;
+            justify-content: center;
+        }
+
+        .heading h1 {
+            font-size: 70px;
+            text-align: center;
+        }
+
+        .form-wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        form {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            width: 100%;
+            max-width: 950px;
+        }
+
+        label {
+            font-size: 35px;
+            white-space: nowrap;
+        }
+
+        input {
+            height: 40px;
+            flex: 1;
+            min-width: 0;
+            font-size: 25px;
+        }
+
+        button {
+            height: 40px;
+            width: 100px;
+            font-size: 22px;
+        }
+
+        .todoitem {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            margin-top: 40px;
+        }
+
+        /* Mobile */
+        @media (max-width: 600px) {
+
+            body {
+                padding: 15px;
+            }
+
+            .heading h1 {
+                font-size: 40px;
+            }
+
+            form {
+                flex-direction: column;
+                align-items: stretch;
+                gap: 12px;
+            }
+
+            label {
+                font-size: 25px;
+            }
+
+            input {
+                width: 100%;
+                height: 45px;
+                font-size: 20px;
+            }
+
+            button {
+                width: 100%;
+                height: 45px;
+                font-size: 20px;
+            }
+
+            .todoitem {
+                margin-top: 25px;
+            }
+        }
+    </style>
 </head>
 
-<body style="background-color: black; color: white; height: 100vh;">
+<body>
 
-    <div style="display: flex; justify-content: center;">
-        <h1 style="font-size: 70px;">TODO-LIST</h1>
+    <div class="heading">
+        <h1>TODO-LIST</h1>
     </div>
 
-    <div style="display: flex; justify-content: center; align-items: center;">
+    <div class="form-wrapper">
         <form>
 
-            <label for="text" style="font-size: 35px;">
+            <label for="text">
                 TODO:
             </label>
 
-            <input 
-                type="text" 
-                id="text" 
+            <input
+                type="text"
+                id="text"
                 name="text"
-                style="height: 35px; width: 700px; font-size: 30px;"
             >
 
             <button
                 type="submit"
-                style="
-                    margin-left: 20px;
-                    height: 35px;
-                    width: 100px;
-                    font-size: 25px;
-                "
                 disabled>
                 Add
             </button>
@@ -42,18 +137,7 @@
         </form>
     </div>
 
-
-    <div 
-        class="todoitem"
-        style="
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            width: 100%;
-            margin-top: 40px;
-        ">
-    </div>
-
+    <div class="todoitem"></div>
 
     <script src="script.js"></script>
 
